@@ -1,0 +1,196 @@
+:root {
+  --desaturatedRed: hsl(0, 36%, 70%);
+  --softRed: hsl(0, 93%, 68%);
+  --grayishRed: hsl(0, 6%, 24%);
+  --gradient1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradient2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  font-family: 'Josefin Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.textBox {
+  width: 40%;
+  padding: 5% 12%;
+  background-image: url(images/bg-pattern-desktop.svg), var(--gradient1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--desaturatedRed);
+}
+
+.picBox {
+  width: 50%;
+  background-image: url(images/hero-desktop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.headerSmall {
+  display: none;
+}
+
+.headerBig {
+  margin-bottom: 25%;
+}
+
+.heading1 {
+  text-transform: uppercase;
+  font-size: 4rem;
+  letter-spacing: 1rem;
+  font-weight: 300;
+}
+
+.headSpan {
+  font-weight: 600;
+  color: black;
+}
+
+.textContent {
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  text-align: flex-start;
+  justify-content: space-between;
+}
+
+.text {
+  width: 90%;
+  line-height: 1.7rem;
+}
+
+/* ___________________
+=== FORM STYLING ===
+______________________ */
+
+.formBox {
+  display: flex;
+}
+
+.formInput {
+  border-radius: 25px;
+  padding: 10% 15%;
+  width: 200%;
+  border: 1px solid var(--desaturatedRed);
+  background-color: transparent;
+  color: var(--desaturatedRed);
+}
+
+.errorText {
+  display: none;
+}
+
+/* ################################
+##### TOGGLE THESE CLASSES ##### */
+
+/* ___for .formInput___ */
+.formBad {
+  background-image: url(images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: 80% 50%;
+  border: 2px solid var(--softRed);
+  outline: none;
+  color: black;
+  font-weight: 600;
+}
+
+/* ___for .errorText___ */
+.errorTextVisible {
+  display: block;
+  color: var(--softRed);
+  margin-top: 2%;
+  margin-left: 5%;
+  font-size: 0.8rem;
+}
+
+
+/* ##### TOGGLE THESE CLASSES #####
+################################### */
+
+.formBtn {
+  border-radius: 25px;
+  border: none;
+  color: white;
+  background: var(--gradient2);
+  font-size: 2rem;
+  font-weight: 300;
+  font-family: 'Coustard', serif;
+  padding-left: 8%;
+  padding-right: 8%;
+  cursor: pointer;
+  position: relative;
+  left: 35%;
+  filter: drop-shadow(0 10px 10px hsl(0, 80%, 86%));
+}
+
+::placeholder {
+  color: var(--desaturatedRed);
+  opacity: 1;
+}
+
+.formBtn:hover {
+  background: none;
+  background-color: hsl(0, 80%, 86%);
+}
+
+.formInput:focus {
+  outline-color: var(--desaturatedRed);
+}
+
+/* ______________
+=== MEDIA ===
+______________ */
+
+@media (max-width: 1000px) {
+  /* __flexbox and general layout___ */
+  .content {
+    flex-wrap: wrap;
+    width: 100%;
+    background: hsl(0, 100%, 98%);
+  }
+  .picBox {
+    width: 100%;
+    height: 250px;
+    background-position: -50% 20%;
+  }
+  .textBox {
+    order: 1;
+    width: 100%;
+    background: hsl(0, 100%, 98%);
+  }
+  /* ___changing logo___ */
+  .headerBig {
+    display: none;
+  }
+  .headerSmall {
+    margin: 10% 5%;
+    display: block;
+  }
+  /* ___text content___ */
+  .heading1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10%;
+  }
+  .text {
+    text-align: center;
+    line-height: 1.3rem;
+    font-size: 0.8rem;
+    margin-bottom: 8%;
+  }
+  /* ___form___ */
+  .formInput {
+    width: 130%;
+  }
+  .formBtn {
+    left: 20%;
+  }
+}
